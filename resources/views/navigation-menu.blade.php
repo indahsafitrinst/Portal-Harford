@@ -1,36 +1,41 @@
+<!--CSS-->
+<link rel="stylesheet" type="text/css" href="Assets/style.css">
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                        <x-jet-application-mark class="block h-9 w-auto" />
+                    <a href="{{ route('home') }}">
+                    <img src="{{asset('/logo.png')}}" height="90px" width="180px"/>
                     </a>
                 </div>
+                
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                    <x-jet-nav-link href="{{ route('home') }}" :active="request()->routeIs('home')">
+                        {{ __('Home') }}
                     </x-jet-nav-link>
 
                     @can('manage-users')
-                    <x-jet-nav-link href="{{ route('admin.users.index') }}" :active="request()->routeIs('admin.users.index')">
-                        {{ __('Users') }}
+                    <x-jet-nav-link href="/schedule" :active="request()->routeIs('dashboard')">
+                        {{ __('Admin') }}
                     </x-jet-nav-link>
                     @endif
 
                     @if (auth()->user()->role_id == 2)
-                        <x-jet-nav-link href="{{ route('student.lessons.index') }}" :active="request()->routeIs('student.lessons.index')">
-                            {{ __('Lessons') }}
+                        <x-jet-nav-link href="/mylesson" :active="request()->routeIs('student.lessons.index')">
+                            {{ __('Student') }}
                         </x-jet-nav-link>
                     @endif
 
                     @can('manage-courses')
-                        <x-jet-nav-link href="{{ route('teacher.courses.index') }}" :active="request()->routeIs('teacher.courses.index')">
-                            {{ __('Courses') }}
+                        <x-jet-nav-link href="/mymaterials" :active="request()->routeIs('teacher.courses.index')">
+                            {{ __('Teacher') }}
                         </x-jet-nav-link>
                     @endif
                 </div>
@@ -115,7 +120,7 @@
                             </div>
 
                             <x-jet-dropdown-link href="{{ route('profile.show') }}">
-                                {{ __('Profile') }}
+                            <button style="font-size:18px">{{ __('Profile') }} <i class="fa fa-user"></i></button>
                             </x-jet-dropdown-link>
 
                             @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
@@ -128,12 +133,15 @@
 
                             <!-- Authentication -->
                             <form method="POST" action="{{ route('logout') }}">
-                                @csrf
+                               
+                                   @csrf
 
                                 <x-jet-dropdown-link href="{{ route('logout') }}"
-                                         onclick="event.preventDefault();
+                                        
+                                        onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                    {{ __('Logout') }}
+                                 <button style="font-size:18px">{{ __('Logout') }} <i class="fa fa-sign-out"></i></button>
+                                    
                                 </x-jet-dropdown-link>
                             </form>
                         </x-slot>
@@ -156,8 +164,8 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
+            <x-jet-responsive-nav-link href="{{ route('home') }}" :active="request()->routeIs('home')">
+                {{ __('Home') }}
             </x-jet-responsive-nav-link>
         </div>
 

@@ -1,0 +1,267 @@
+/* this is css for admin pages */
+/* mydashboard */
+/* sidebar */
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+  }
+  
+  #check {
+    display: none;
+    
+  }
+  label #btn,
+  label #cancle {
+    position: absolute;
+    cursor: pointer;
+    background: #000078;
+    color: #fff;
+    border-radius: 3px;
+  }
+  label #btn {
+    margin-top: 50px;
+    margin-left: -27px;
+    left: 40px;
+    top: 25px;
+    font-size: 35px;
+    color: #fff;
+    padding: 4px 6px;
+    transition: all 0.5s;
+    width: 40px;
+  }
+  #cancle {
+    z-index: 1111;
+    left: -195px;
+    top: 17px;
+    font-size: 30px;
+    color: #0a5275;
+    padding: 4px 9px;
+    transition: all 0.5s;
+    margin-top: 100px;
+    margin-left: -10px;
+  }
+  /* active side bar */
+  .sidebar {
+    position: absolute;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: #000082;
+    transition: all 0.5s ease;
+    margin-top: -40px;
+    
+    
+  }
+  #check:checked ~ .sidebar {
+    left: 0;
+  }
+  #check:checked ~ label #btn {
+    left: 250px;
+    opacity: 0;
+    pointer-events: none;
+  }
+  #check:checked ~ label #cancle {
+    left: 245px;
+  }
+  #check:checked ~ section {
+    margin-left: 250px;
+  }
+  .sidebar header img {
+    border-radius: 50%;
+    width: 120px;
+    height: 100%;
+  }
+  .sidebar header {
+    font-size: 22px;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    background: #000089;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    user-select: none;
+  }
+  .sidebar ul a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 65px;
+    font-size: 20px;
+    color: #fff;
+    padding: 7px 7px;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid black;
+    transition: 0.4s;
+
+  }
+  .sidebar ul a i {
+    margin-right: 16px;
+    
+    
+  }
+  /* hover effect */
+  ul li:hover a {
+    padding-left: 50px;
+  }
+  
+  .list{
+   padding-left: 7px;
+  }
+  .list2{
+    padding-left: 7px;
+   }
+  .list3{
+    padding-left: 7px;
+  }
+  .list4{
+    padding-left: 16px;
+  }
+  .list5{
+    padding-left: 7px;
+  }
+  .list6{
+    padding-left: 18px;
+  }
+  .list7{
+    padding-left: 18px;
+  }
+  
+
+/* branches */
+.cards {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: 30px 0 0 300px;
+  text-align: center;
+  font-family: arial;
+  background-color: white;
+  display: inline-block;
+}
+
+.cards-2 {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  height: 215px;
+  margin: 30px 0 0 50px;
+  text-align: center;
+  font-family: arial;
+  background-color: white;
+  display: inline-block;
+}
+
+.cards-3 {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: 30px 0 0 50px;
+  text-align: center;
+  font-family: arial;
+  background-color: white;
+  display: inline-block;
+}
+
+.cards-4 {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: 30px 0 0 300px;
+  text-align: center;
+  font-family: arial;
+  background-color: white;
+  display: inline-block;
+}
+
+.cards-5 {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  width: 300px;
+  margin: 30px 0 0 50px;
+  text-align: center;
+  font-family: arial;
+  background-color: white;
+  display: inline-block;
+}
+
+.cards-6 {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: 30px 0 0 50px;
+  text-align: center;
+  font-family: arial;
+  background-color: white;
+  display: inline-block;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+.button-branch {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+.button-branch:hover, a:hover {
+  opacity: 0.7;
+}
+
+/* announcement */
+/* read more */
+#more {display: none;}
+#myBtn{
+ color: blue;
+}
+
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* counter on home */
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+  }
+}
+
+/* calendar */
+.calendar-box{
+  height: 460px; width: 830px;
+  margin: 40px 0 0 330px; 
+}
+
+.cal{
+ text-align: justify;
+  font-size: 125%;  
+  color: rgba(56, 56, 56, 0.87);
+  margin: 100px 0 0 300px;
+}
+
+.active{
+  background-color: rgba(145, 145, 145, 0.925);
+  
+}
+
+
+
